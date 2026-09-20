@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="初二生物会考复习资料网提供最新、最全的初二生物会考知识点总结、模拟试题、实验操作指南及复习规划。帮助初中生高效备考，轻松应对生物会考。">
+    <meta name="keywords" content="初二生物会考复习资料,初中生物会考,生物知识点总结,生物模拟试题">
+    <title>初二生物会考复习资料-初中生物考点解析与模拟训练平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #e8f5e9;
+            --accent-color: #ff9800;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f4f6f8;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #1b5e20;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4caf50 100%);
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        main {
+            padding: 32px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Knowledge Points Grid */
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .point-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .point-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .point-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .point-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .point-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        /* Exam Guide Section */
+        .guide-section {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            margin-bottom: 48px;
+            box-shadow: var(--shadow);
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            background-color: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Practice Section */
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .practice-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .practice-card:hover {
+            background-color: var(--primary-light);
+        }
+
+        .practice-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .practice-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .practice-card a {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+            padding-top: 8px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #b0bec5;
+            padding: 40px 0 20px;
+            margin-top: 48px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #37474f;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+                <span>生物会考复习资料</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#knowledge" class="active">核心考点</a>
+                <a href="#guide">备考指南</a>
+                <a href="#practice">模拟练习</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#" class="btn-subscribe">免费领取复习计划</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>初二生物会考复习资料</h1>
+            <p>系统梳理人教版/苏教版核心知识点，提供精选试题与实验指导，助你高效备考，冲刺满分。</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">知识点图谱</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">历年真题</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">覆盖考纲</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Knowledge Points Section -->
+        <section id="knowledge">
+            <h2 class="section-title">核心知识点体系</h2>
+            <div class="points-grid">
+                <article class="point-card">
+                    <h3>细胞与生物体</h3>
+                    <p>掌握植物细胞与动物细胞的结构区别，理解线粒体、叶绿体在能量转换中的作用，以及细胞分裂的过程。</p>
+                    <span class="tag">必修一</span>
+                </article>
+                <article class="point-card">
+                    <h3>人体新陈代谢</h3>
+                    <p>重点复习消化系统、呼吸系统、循环系统的结构功能及物质交换过程，理解内环境稳态的重要性。</p>
+                    <span class="tag">必修一</span>
+                </article>
+                <article class="point-card">
+                    <h3>生物圈中的绿色植物</h3>
+                    <p>光合作用的原料、产物、场所及条件；呼吸作用与光合作用的区别联系；植物对水分和无机盐的吸收。</p>
+                    <span class="tag">必修一</span>
+                </article>
+                <article class="point-card">
+                    <h3>生物的多样性</h3>
+                    <p>了解生物分类的基本单位，理解真菌、细菌的结构特点及其在自然界中的分解作用。</p>
+                    <span class="tag">必修一</span>
+                </article>
+                <article class="point-card">
+                    <h3>运动与神经调节</h3>
+                    <p>骨骼肌、肌腱、关节的结构配合；反射弧的组成；神经冲动的产生与传导；激素调节与体液调节。</p>
+                    <span class="tag">必修二</span>
+                </article>
+                <article class="point-card">
+                    <h3>遗传与进化</h3>
+                    <p>基因、DNA、染色体的关系；孟德尔遗传定律；性状分离比的计算；近亲结婚的危害。</p>
+                    <span class="tag">必修二</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Study Guide Section -->
+        <section id="guide">
+            <h2 class="section-title">科学备考指南</h2>
+            <div class="guide-section">
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>回归课本，构建框架</h4>
+                            <p>以教材为基础，利用思维导图将所有章节内容串联起来。重点标记课后思考题和课下作业中的高频考点。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>攻克实验，理解原理</h4>
+                            <p>会考中实验题占比极高。不仅要背诵实验步骤，更要理解“对照原则”、“单一变量原则”等生物学思想方法。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>真题演练，查漏补缺</h4>
+                            <p>利用近3-5年的本地会考真题进行模拟训练。分析错题原因，针对薄弱环节进行专项复习。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Tools -->
+        <section id="practice">
+            <h2 class="section-title">备考工具箱</h2>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">📝</div>
+                    <h3>考点速记卡</h3>
+                    <p>高频易错知识点提炼，适合考前快速浏览记忆。</p>
+                    <a href="#">开始记忆 &rarr;</a>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">🧪</div>
+                    <h3>实验操作视频</h3>
+                    <p>显微镜使用、临时装片制作等核心实验操作演示。</p>
+                    <a href="#">观看教程 &rarr;</a>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">📊</div>
+                    <h3>模拟测试卷</h3>
+                    <p>全真模拟会考环境，自动生成诊断报告。</p>
+                    <a href="#">立即测试 &rarr;</a>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">🤝</div>
+                    <h3>错题本管理</h3>
+                    <p>自动收集错题，支持按知识点分类复习。</p>
+                    <a href="#">管理错题 &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">初二生物会考主要考察哪些内容？</div>
+                    <div class="faq-answer">主要考察七年级和八年级上下册内容，涵盖《生物学》必修一（分子与细胞）和必修二（遗传与进化）的核心知识点，以及部分八年级下册的《生物圈中的人》。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何提高实验题的得分率？</div>
+                    <div class="faq-answer">首先必须清晰记忆实验步骤和现象，其次要理解实验设计的逻辑（如对照组和实验组）。建议结合教材中的插图和高清实验视频进行复习。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">遗传定律的计算题很难，有什么技巧吗？</div>
+                    <div class="faq-answer">掌握分离定律和自由组合定律的基本公式。做题时先确定显隐性，画遗传图解是最直观的方法，避免死记硬背。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">复习时间紧迫，应该先看哪个板块？</div>
+                    <div class="faq-answer">建议优先复习“生物圈中的人”（人体生理）和“遗传与进化”，这两部分在会考中分值较高且逻辑性强。细胞部分相对基础，可穿插复习。</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">使用条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>复习资源</h4>
+                    <ul>
+                        <li><a href="#">知识点大全</a></li>
+                        <li><a href="#">历年真题下载</a></li>
+                        <li><a href="#">电子课本</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：support@bioexam.cn</li>
+                        <li>客服时间：9:00 - 21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 初二生物会考复习资料网. All Rights Reserved. 本站内容仅供学习交流使用.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
