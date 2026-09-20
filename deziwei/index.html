@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="的滋味是一个专注于美食文化、烹饪技巧与生活美学的探索平台。在这里，我们分享世界各地地道美食的独有滋味，从家常菜谱到米其林级料理，带你品味生活的每一份美好。">
+    <meta name="keywords" content="的滋味, 美食, 烹饪, 食谱, 美食文化, 厨艺">
+    <title>的滋味-品味生活的每一份美好与烹饪艺术</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #e67e22;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #eee;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-left: 8px;
+            width: 150px;
+        }
+
+        .search-bar input::placeholder {
+            color: #aaa;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/foodhero/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Featured Categories */
+        .categories {
+            padding: 60px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        /* Recipes Section */
+        .recipes {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background: var(--bg-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .recipe-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .recipe-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-info {
+            padding: 20px;
+        }
+
+        .recipe-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            background: rgba(211, 84, 0, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .recipe-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .recipe-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            padding: 80px 0;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .philosophy p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter-box {
+            background: var(--primary-color);
+            border-radius: 20px;
+            padding: 50px;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            width: 300px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            background: white;
+            color: var(--primary-color);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .newsletter-form button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .search-bar {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .newsletter-form input {
+                width: 100%;
+            }
+
+            .newsletter-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">的滋味<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">食谱大全</a></li>
+                    <li><a href="#">美食文化</a></li>
+                    <li><a href="#">厨房技巧</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <span>🔍</span>
+                <input type="text" placeholder="搜索食谱、食材...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探寻每一份独特的滋味</h1>
+                <p>从家常烟火到舌尖上的旅行，在这里，我们记录食物与生活的每一次相遇。</p>
+                <button class="btn" onclick="document.getElementById('recipes').scrollIntoView({behavior: 'smooth'})">开始探索</button>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">探索美食分类</h2>
+                <p class="section-subtitle">无论你是想寻找简单的快手菜，还是想挑战复杂的创意料理，这里都有适合你的入口。</p>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="category-icon">🍜</span>
+                        <h3>家常热菜</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🍰</span>
+                        <h3>烘焙甜点</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🥗</span>
+                        <h3>轻食沙拉</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🍲</span>
+                        <h3>汤羹炖品</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🥩</span>
+                        <h3>肉食控</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🍜</span>
+                        <h3>面食主食</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Recipes -->
+        <section id="recipes" class="recipes">
+            <div class="container">
+                <h2 class="section-title">本周精选食谱</h2>
+                <p class="section-subtitle">精选全网最受欢迎的烹饪指南，让你轻松掌握美味秘诀。</p>
+                <div class="recipe-grid">
+                    <article class="recipe-card">
+                        <img src="https://picsum.photos/seed/steak/400/300.jpg" alt="香煎牛排" class="recipe-img">
+                        <div class="recipe-info">
+                            <span class="recipe-tag">西式料理</span>
+                            <h3 class="recipe-title">完美香煎牛排的秘诀</h3>
+                            <p class="recipe-desc">掌握火候与腌制技巧，在家也能做出餐厅级别的厚切牛排，外焦里嫩，汁水丰盈。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 30分钟</span>
+                                <span>🔥 难度：中等</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <img src="https://picsum.photos/seed/salad/400/300.jpg" alt="藜麦鸡胸肉沙拉" class="recipe-img">
+                        <div class="recipe-info">
+                            <span class="recipe-tag">减脂餐</span>
+                            <h3 class="recipe-title">清爽低卡藜麦沙拉</h3>
+                            <p class="recipe-desc">适合健身人群的优质碳水搭配，富含蛋白质与膳食纤维，清爽解腻，饱腹感强。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 15分钟</span>
+                                <span>🔥 难度：简单</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <img src="https://picsum.photos/seed/soup/400/300.jpg" alt="番茄牛腩汤" class="recipe-img">
+                        <div class="recipe-info">
+                            <span class="recipe-tag">汤羹</span>
+                            <h3 class="recipe-title">暖心番茄牛腩汤</h3>
+                            <p class="recipe-desc">酸甜开胃的番茄与软烂入味的牛腩完美融合，汤汁浓郁，是冬日里的一碗暖流。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 2小时</span>
+                                <span>🔥 难度：简单</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn" style="background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color);">查看更多食谱</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy">
+            <div class="container philosophy-content">
+                <h2>味蕾背后的生活哲学</h2>
+                <p>“的滋味”不仅仅关于食物，更关于我们如何通过烹饪表达爱意、记录时光。每一道菜都是一个故事，每一次下厨都是对生活的热爱。</p>
+                <div class="steps">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <h4 class="step-title">用心选材</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">好的食材是美味的基础，尊重季节，回归自然。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <h4 class="step-title">热爱烹饪</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">享受切菜、翻炒的节奏，让厨房成为治愈的角落。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <h4 class="step-title">分享喜悦</h4>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">将做好的食物端上桌，与家人朋友共享这份温暖。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-box">
+                    <h2>订阅我们的食谱周刊</h2>
+                    <p>每周一推送精选食谱与烹饪小贴士，不错过任何一道美味。</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！我们会将最新食谱发送到您的邮箱。');">
+                        <input type="email" placeholder="请输入您的电子邮箱" required>
+                        <button type="submit">立即订阅</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>的滋味</h4>
+                    <p style="color: #999; font-size: 0.9rem; line-height: 1.8;">
+                        一个专注于美食文化与生活美学的探索平台。我们相信，每一份独特的滋味都值得被记录和分享。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">家常菜谱</a></li>
+                        <li><a href="#">烘焙甜点</a></li>
+                        <li><a href="#">健康饮食</a></li>
+                        <li><a href="#">地方特色</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">contact@deziw.com</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 的滋味 版权所有 | 京ICP备12345678号
+            </div>
+        </div>
+    </footer>
+
+</body>
+      </html>
